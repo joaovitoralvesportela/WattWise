@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: linear-gradient(to bottom right, #06245C 0%, #0B4FD6 55%, #2E8BFF 100%);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tela_controle_monitoramento">
+   <children>
+
+      <!-- LOGO WattWise -->
+      <StackPane layoutX="120.0" layoutY="40.0" prefHeight="84.0" prefWidth="84.0">
+         <children>
+            <Rectangle arcHeight="44.0" arcWidth="44.0" fill="WHITE" height="84.0" width="84.0" />
+            <SVGPath content="M60 18 L28 60 H48 L42 88 L76 42 H56 Z" fill="#0B4FD6" scaleX="0.8" scaleY="0.8" />
+         </children>
+      </StackPane>
+      <Label layoutX="228.0" layoutY="46.0" style="-fx-font-size: 56px; -fx-font-weight: bold; -fx-text-fill: white;" text="WattWise" />
+      <Label layoutX="1000.0" layoutY="52.0" prefWidth="800.0" alignment="CENTER_RIGHT" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: white;" text="Produção de energia em tempo real" />
+      <Label layoutX="1000.0" layoutY="104.0" prefWidth="800.0" alignment="CENTER_RIGHT" style="-fx-font-size: 22px; -fx-text-fill: rgba(255,255,255,0.8);" text="Placa solar monitorada pelo Arduino (INA219)" />
+
+      <!-- CARTÃO BRANCO PRINCIPAL -->
+      <VBox layoutX="120.0" layoutY="160.0" prefHeight="770.0" prefWidth="1680.0" spacing="14.0" style="-fx-background-color: white; -fx-background-radius: 28;">
+         <padding>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+         </padding>
+         <children>
+
+            <!-- LINHA DE CONTROLES -->
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" spacing="14.0">
+               <children>
+                  <Label style="-fx-font-size: 18px; -fx-text-fill: #3A4F7A;" text="Porta serial" />
+                  <ComboBox fx:id="cbPorta" prefHeight="44.0" prefWidth="220.0" />
+                  <Button fx:id="btnConectar" mnemonicParsing="false" onAction="#alternarConexao" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: #0B4FD6; -fx-background-radius: 12; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-cursor: hand;" text="Conectar" />
+                  <Button fx:id="btnSimular" mnemonicParsing="false" onAction="#alternarSimulacao" prefHeight="44.0" prefWidth="190.0" style="-fx-background-color: white; -fx-border-color: #0B4FD6; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #0B4FD6; -fx-font-size: 18px; -fx-font-weight: bold; -fx-cursor: hand;" text="Simular" />
+                  <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#limparGrafico" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-color: #0B4FD6; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #0B4FD6; -fx-font-size: 18px; -fx-font-weight: bold; -fx-cursor: hand;" text="Limpar gráfico" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label style="-fx-font-size: 18px; -fx-text-fill: #3A4F7A;" text="Mostrar no gráfico" />
+                  <ComboBox fx:id="cbMetrica" prefHeight="44.0" prefWidth="220.0" />
+               </children>
+            </HBox>
+
+            <!-- CARTÕES DE VALORES -->
+            <HBox prefHeight="110.0" spacing="16.0">
+               <children>
+                  <VBox prefWidth="300.0" spacing="4.0" style="-fx-background-color: #F1F5FC; -fx-background-radius: 16; -fx-border-color: #C3D2EE; -fx-border-radius: 16;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="20.0" right="20.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-text-fill: #3A4F7A;" text="Tensão" />
+                        <Label fx:id="lblTensao" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #06245C;" text="-" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0" spacing="4.0" style="-fx-background-color: #F1F5FC; -fx-background-radius: 16; -fx-border-color: #C3D2EE; -fx-border-radius: 16;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="20.0" right="20.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-text-fill: #3A4F7A;" text="Corrente" />
+                        <Label fx:id="lblCorrente" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #06245C;" text="-" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0" spacing="4.0" style="-fx-background-color: #F1F5FC; -fx-background-radius: 16; -fx-border-color: #C3D2EE; -fx-border-radius: 16;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="20.0" right="20.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-text-fill: #3A4F7A;" text="Potência" />
+                        <Label fx:id="lblPotencia" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #06245C;" text="-" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0" spacing="4.0" style="-fx-background-color: #F1F5FC; -fx-background-radius: 16; -fx-border-color: #C3D2EE; -fx-border-radius: 16;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="20.0" right="20.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-text-fill: #3A4F7A;" text="Energia gerada" />
+                        <Label fx:id="lblEnergia" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #06245C;" text="-" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0" spacing="4.0" style="-fx-background-color: #F1F5FC; -fx-background-radius: 16; -fx-border-color: #C3D2EE; -fx-border-radius: 16;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="20.0" right="20.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-text-fill: #3A4F7A;" text="Conexão" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Circle fx:id="circStatus" fill="#9AA7BF" radius="9.0" />
+                              <Label fx:id="lblStatus" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #06245C;" text="Desconectado" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="lblUltimaLeitura" style="-fx-font-size: 14px; -fx-text-fill: #3A4F7A;" text="Aguardando dados..." />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- GRÁFICO: tempo (segundos) embaixo, valor medido à esquerda -->
+            <LineChart fx:id="graficoEnergia" animated="false" createSymbols="false" legendVisible="false" prefHeight="500.0" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis fx:id="eixoTempo" autoRanging="false" label="Tempo (segundos)" lowerBound="0.0" minorTickVisible="false" side="BOTTOM" tickUnit="10.0" upperBound="70.0" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="eixoValor" label="Potência (W)" side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children>
+      </VBox>
+
+      <!-- BOTÃO VOLTAR -->
+      <Button fx:id="btnVoltar" layoutX="120.0" layoutY="968.0" mnemonicParsing="false" onAction="#voltar" prefHeight="66.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2; -fx-border-radius: 16; -fx-background-radius: 16; -fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold; -fx-cursor: hand;" text="Voltar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.calcular_valor">
+   <children>
+      <ImageView fx:id="imgViewBackGroundCal" fitHeight="1084.0" fitWidth="1922.0" layoutX="-2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagem/wattwise-calcular-conta.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="ComboBox" layoutX="1307.0" layoutY="280.0" prefHeight="67.0" prefWidth="412.0" promptText="Máquias" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #000000;" />
+      <TextField fx:id="textfieldConsumoKw" layoutX="1306.0" layoutY="547.0" prefHeight="71.0" prefWidth="417.0" promptText="Consumo em kw" style="-fx-background-radius: 11;">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textfieldTempoUso" layoutX="1306.0" layoutY="412.0" prefHeight="71.0" prefWidth="417.0" promptText="Tempo de uso" style="-fx-background-radius: 11;">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblResultado" layoutX="1276.0" layoutY="774.0" prefHeight="65.0" prefWidth="486.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCalcular" layoutX="1306.0" layoutY="650.0" mnemonicParsing="false" onAction="#CalcularConta" prefHeight="77.0" prefWidth="427.0" style="-fx-background-color: #1a56db; -fx-text-fill: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Calcular">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnVoltarDashboard1" layoutX="1301.0" layoutY="855.0" mnemonicParsing="false" onAction="#voltarParaDashBoard" prefHeight="73.0" prefWidth="424.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" text="Voltar">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

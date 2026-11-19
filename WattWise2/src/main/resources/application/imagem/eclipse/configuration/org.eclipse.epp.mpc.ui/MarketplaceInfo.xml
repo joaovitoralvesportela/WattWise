@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.11" class="java.beans.XMLDecoder">
+ <object class="org.eclipse.epp.internal.mpc.ui.catalog.MarketplaceInfo" id="MarketplaceInfo0">
+  <void property="iuToNodeKey">
+   <void method="put">
+    <string>org.eclipse.fx.ide.feature.feature.group</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#335225</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>com.flowers7.edt.favorites.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#7516753</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>me.glindholm.connector.eclipse.jira</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#5531779</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>org.eclipse.epp.mpc</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#4123770</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>com.osgifx.eclipse.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#7432611</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>org.mybatis.generator</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#2947754</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>FileSync</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#204</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>com.espressif.idf.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#4898373</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>octane.eclipse.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#3528014</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>me.glindholm.plugin.quickimage2.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#5740901</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>net.sourceforge.pmd.eclipse</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#2755329</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>xtext.anbx.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#3795176</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>com.tlcsdm.eclipse.translation.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#6999651</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="nodeKeyToIU">
+   <void method="put">
+    <string>https://marketplace.eclipse.org#7516753</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.flowers7.edt.favorites.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#3528014</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>octane.eclipse.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#2755329</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>net.sourceforge.pmd.eclipse</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#7432611</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.osgifx.eclipse.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#3795176</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>xtext.anbx.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#5740901</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>me.glindholm.plugin.quickimage2.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#5531779</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>me.glindholm.connector.eclipse.jira</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#204</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>FileSync</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#6999651</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.tlcsdm.eclipse.translation.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#4898373</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.espressif.idf.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#2947754</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>org.mybatis.generator</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#4123770</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>org.eclipse.epp.mpc</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#335225</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>org.eclipse.fx.ide.feature.feature.group</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

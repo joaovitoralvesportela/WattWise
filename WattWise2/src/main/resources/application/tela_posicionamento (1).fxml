@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #F4F7FC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tela_controle_posicionamento">
+   <children>
+
+      <!-- CABEÇALHO -->
+      <Label layoutX="60.0" layoutY="32.0" text="WattWise" textFill="#0B4FD6">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="96.0" text="Simulador de posicionamento dos painéis solares" textFill="#3A4F7A">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnVoltar" layoutX="1700.0" layoutY="44.0" mnemonicParsing="false" onAction="#voltar" prefHeight="52.0" prefWidth="160.0" style="-fx-background-color: white; -fx-border-color: #0B4FD6; -fx-border-width: 2; -fx-border-radius: 14; -fx-background-radius: 14; -fx-text-fill: #0B4FD6; -fx-font-size: 20px; -fx-font-weight: bold; -fx-cursor: hand;" text="Voltar" />
+
+      <HBox layoutX="60.0" layoutY="150.0" prefHeight="860.0" prefWidth="1800.0" spacing="32.0">
+         <children>
+
+            <!-- ÁREA ESQUERDA: CONFIGURAÇÕES -->
+            <VBox prefWidth="520.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 24; -fx-border-color: #C3D2EE; -fx-border-radius: 24;">
+               <padding>
+                  <Insets bottom="28.0" left="32.0" right="32.0" top="28.0" />
+               </padding>
+               <children>
+                  <Label text="Configurações do telhado" textFill="#06245C">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+
+                  <Label text="Comprimento do telhado (metros)" textFill="#3A4F7A">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtComprimento" promptText="Ex.: 10,5" style="-fx-background-color: #F1F5FC; -fx-border-color: #C3D2EE; -fx-border-radius: 12; -fx-background-radius: 12; -fx-font-size: 20px; -fx-padding: 12;" />
+
+                  <Label text="Largura do telhado (metros)" textFill="#3A4F7A">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtLargura" promptText="Ex.: 6" style="-fx-background-color: #F1F5FC; -fx-border-color: #C3D2EE; -fx-border-radius: 12; -fx-background-radius: 12; -fx-font-size: 20px; -fx-padding: 12;" />
+
+                  <Label text="Margem de segurança (metros)" textFill="#3A4F7A">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtMargem" promptText="Ex.: 0,5" style="-fx-background-color: #F1F5FC; -fx-border-color: #C3D2EE; -fx-border-radius: 12; -fx-background-radius: 12; -fx-font-size: 20px; -fx-padding: 12;" />
+
+                  <Button fx:id="btnSimular" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#simular" prefHeight="60.0" style="-fx-background-color: #0B4FD6; -fx-background-radius: 14; -fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold; -fx-cursor: hand;" text="Simular posicionamento">
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Button>
+
+                  <Separator>
+                     <VBox.margin>
+                        <Insets bottom="4.0" top="16.0" />
+                     </VBox.margin>
+                  </Separator>
+
+                  <Label text="Resultados" textFill="#06245C">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+
+                  <GridPane hgap="12.0" vgap="14.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="210.0" />
+                     </columnConstraints>
+                     <children>
+                        <Label text="Área total do telhado" textFill="#3A4F7A" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAreaTotal" text="-" textFill="#06245C" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+
+                        <Label text="Área disponível" textFill="#3A4F7A" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAreaDisponivel" text="-" textFill="#06245C" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+
+                        <Label text="Painéis instalados" textFill="#3A4F7A" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblQtdPaineis" text="-" textFill="#0B4FD6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+
+                        <Label text="Área ocupada pelos painéis" textFill="#3A4F7A" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAreaOcupada" text="-" textFill="#06245C" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+
+                        <Label text="Potência instalada" textFill="#3A4F7A" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPotencia" text="-" textFill="#06245C" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+
+                  <Label text="Disposição escolhida" textFill="#3A4F7A">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lblOrientacao" text="-" textFill="#06245C" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <!-- ÁREA DIREITA: VISUALIZAÇÃO -->
+            <VBox prefWidth="1248.0" spacing="14.0" style="-fx-background-color: white; -fx-background-radius: 24; -fx-border-color: #C3D2EE; -fx-border-radius: 24;">
+               <padding>
+                  <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+               </padding>
+               <children>
+                  <Label text="Visualização do telhado (vista de cima)" textFill="#06245C">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+
+                  <Canvas fx:id="canvasTelhado" height="620.0" width="1200.0" />
+
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Rectangle fill="#06245C" height="18.0" stroke="#06245C" width="18.0" />
+                        <Label text="Painel instalado" textFill="#3A4F7A">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Rectangle fill="WHITE" height="18.0" stroke="#0B4FD6" width="18.0">
+                           <HBox.margin>
+                              <Insets left="24.0" />
+                           </HBox.margin>
+                        </Rectangle>
+                        <Label text="Área útil" textFill="#3A4F7A">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Rectangle fill="#DDE6F5" height="18.0" stroke="#06245C" width="18.0">
+                           <HBox.margin>
+                              <Insets left="24.0" />
+                           </HBox.margin>
+                        </Rectangle>
+                        <Label text="Margem de segurança" textFill="#3A4F7A">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+
+                  <Label fx:id="lblStatus" text="" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

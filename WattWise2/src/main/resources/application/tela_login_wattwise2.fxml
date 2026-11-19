@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tela_controle_login">
+   <children>
+      <ImageView fx:id="imgviewBackground" fitHeight="1080.0" fitWidth="1928.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagem/wattwise-login.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textfieldEmail" layoutX="1298.0" layoutY="422.0" prefHeight="72.0" prefWidth="424.0" promptText="Informe o seu email" style="-fx-background-color: #f4f6f9; -fx-background-radius: 8px; -fx-border-color: #d1d5db; -fx-border-radius: 8; -fx-padding: 8px 12px;">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textfiledSenha" layoutX="1298.0" layoutY="560.0" prefHeight="70.0" prefWidth="424.0" promptText="Informe a senha" style="-fx-background-color: #f4f6f9; -fx-background-radius: 8px; -fx-border-color: #d1d5db; -fx-border-radius: 8; -fx-padding: 8px 12px;">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordfieldSenha" layoutX="1298.0" layoutY="559.0" prefHeight="72.0" prefWidth="434.0" promptText="Informe a senha" style="-fx-background-color: #f4f6f9; -fx-background-radius: 8; -fx-border-color: #d1d5db; -fx-border-radius: 8; -fx-padding: 8px 12px;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="27.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="btnEntrar" layoutX="1302.0" layoutY="673.0" mnemonicParsing="false" onAction="#EntrarSistema" prefHeight="81.0" prefWidth="416.0" style="-fx-background-color: #1d4ed8; fx-text-fill: white; -fx-background-radius: 8;" text="Entrar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lbltituloCadastro" layoutX="1286.0" layoutY="779.0" text="Nao possui Cadastro?">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="hyperLinkRealizarCadastro" layoutX="1522.0" layoutY="778.0" onAction="#IrparaTelaCadastroHyperLink" text="Realizar Cadastro aqui!">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Hyperlink>
+      <CheckBox fx:id="checkboxVisualizarSenha" layoutX="1304.0" layoutY="641.0" mnemonicParsing="false" onAction="#VisualizarSenha" text="Visualizar Senha">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
